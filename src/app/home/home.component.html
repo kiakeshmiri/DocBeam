@@ -1,0 +1,111 @@
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+    {{tile.text}}
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-divider></mat-divider>
+<mat-checkbox [(ngModel)]="isChecked">Check me!</mat-checkbox> {{isChecked}}
+<mat-divider>
+
+</mat-divider>
+<mat-divider></mat-divider>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="State" aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+      <img class="example-option-img" aria-hidden [src]="state.flag" height="25">
+      <span>{{state.name}}</span> |
+      <small>Population: {{state.population}}</small>
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+<br>
+
+<mat-slide-toggle [checked]="stateCtrl.disabled" (change)="stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()">
+  Disable Input?
+</mat-slide-toggle>
+
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Company (disabled)" disabled value="Google">
+</mat-form-field>
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="First name">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Long Last Name That Will Be Truncated">
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+
+<p>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Address 2"></textarea>
+  </mat-form-field>
+</p>
+
+<table class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="City">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="State">
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
+        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>
+
+<div class="example-container">
+  <form class="example-container" [formGroup]="options">
+    <mat-checkbox formControlName="hideRequired">Hide required marker</mat-checkbox>
+    <div>
+      <label>Float label: </label>
+      <mat-radio-group formControlName="floatLabel">
+        <mat-radio-button value="auto">Auto</mat-radio-button>
+        <mat-radio-button value="always">Always</mat-radio-button>
+        <mat-radio-button value="never">Never</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+
+  <mat-form-field
+      [hideRequiredMarker]="options.value.hideRequired"
+      [floatLabel]="options.value.floatLabel">
+    <input matInput placeholder="Simple placeholder" required>
+  </mat-form-field>
+
+  <mat-form-field [floatLabel]="options.value.floatLabel">
+    <mat-label>Both a label and a placeholder</mat-label>
+    <input matInput placeholder="Simple placeholder">
+  </mat-form-field>
+
+  <mat-form-field
+      [hideRequiredMarker]="options.value.hideRequired"
+      [floatLabel]="options.value.floatLabel">
+    <mat-select required>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
+  </mat-form-field>
+</div>
