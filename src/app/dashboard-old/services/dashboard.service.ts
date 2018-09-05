@@ -15,7 +15,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class DashboardService extends BaseService {
 
-  baseUrl: string = '';
+  baseUrl: String = '';
 
   constructor(private http: HttpClient, private configService: ConfigService) {
     super();
@@ -23,7 +23,7 @@ export class DashboardService extends BaseService {
   }
 
   getHomeDetails(): Observable<HomeDetails> {
-    let authToken = localStorage.getItem('auth_token');
+    const authToken = localStorage.getItem('auth_token');
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -32,9 +32,9 @@ export class DashboardService extends BaseService {
       })
     };
 
-    return this.http.get<HomeDetails>(this.baseUrl + "/dashboard/home", httpOptions)
+    return this.http.get<HomeDetails>(this.baseUrl + '/dashboard/home', httpOptions)
       .pipe(
         catchError(this.handleError)
-      )
+      );
   }
 }

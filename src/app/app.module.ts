@@ -6,18 +6,21 @@ import { HttpClientModule, HttpXhrBackend, HTTP_INTERCEPTORS } from '@angular/co
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AccountModule } from './account/account.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { ConfigService } from './utils/config.service';
 import { AuthenticateXHRBackend } from './authenticate-xhr.backend';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HomeComponent } from './home/home.component';
 import { NotesModule } from './notes/notes.module';
 import { MatComponentsModule } from './mat-components/mat-components.module';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    DashboardComponent,
   ],
   imports: [
     AccountModule,
@@ -27,8 +30,13 @@ import { MatComponentsModule } from './mat-components/mat-components.module';
     HttpClientModule,
     AppRoutingModule,
     MatComponentsModule,
-    DashboardModule,
-    NotesModule
+    NotesModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule
   ],
   providers: [
     ConfigService,

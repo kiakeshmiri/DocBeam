@@ -20,12 +20,13 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   brandNew: boolean;
   errors: string;
   isRequesting: boolean;
-  submitted: boolean = false;
+  submitted: boolean;
   credentials: Credentials = { email: '', password: '', userName: '' };
 
   constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute
-    , private meta: Meta) { 
-      this.meta.addTag({ name: 'google-signin-client_id', content: '718366265318-a4766nun9ogatr8rpr87gb7tedt554ah.apps.googleusercontent.com' });
+    , private meta: Meta) {
+      this.meta.addTag({ name: 'google-signin-client_id', 
+      content: '718366265318-a4766nun9ogatr8rpr87gb7tedt554ah.apps.googleusercontent.com' });
     }
 
   ngOnInit() {
@@ -62,7 +63,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
             }
           },
           error => this.errors = error
-        )
+        );
     }
   }
 

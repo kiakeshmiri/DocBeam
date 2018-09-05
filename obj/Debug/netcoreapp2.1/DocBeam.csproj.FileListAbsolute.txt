@@ -12,3 +12,17 @@ E:\Projects\DocBeam\bin\Debug\netcoreapp2.1\DocBeam.pdb
 E:\Projects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.RazorTargetAssemblyInfo.cache
 E:\Projects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.dll
 E:\Projects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.pdb
+C:\MyProjects\DocBeam\bin\Debug\netcoreapp2.1\DocBeam.deps.json
+C:\MyProjects\DocBeam\bin\Debug\netcoreapp2.1\DocBeam.runtimeconfig.json
+C:\MyProjects\DocBeam\bin\Debug\netcoreapp2.1\DocBeam.runtimeconfig.dev.json
+C:\MyProjects\DocBeam\bin\Debug\netcoreapp2.1\DocBeam.dll
+C:\MyProjects\DocBeam\bin\Debug\netcoreapp2.1\DocBeam.pdb
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.csprojAssemblyReference.cache
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.csproj.CoreCompileInputs.cache
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.RazorAssemblyInfo.cache
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.RazorAssemblyInfo.cs
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.AssemblyInfoInputs.cache
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.AssemblyInfo.cs
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.RazorTargetAssemblyInfo.cache
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.dll
+C:\MyProjects\DocBeam\obj\Debug\netcoreapp2.1\DocBeam.pdb

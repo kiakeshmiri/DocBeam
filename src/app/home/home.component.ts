@@ -8,12 +8,20 @@ import { startWith, map } from 'rxjs/operators';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
 
-  private isChecked = true;
+  public isChecked = true;
 
   stateCtrl = new FormControl();
   filteredStates: Observable<State[]>;
+
+  tiles: Tile[] = [
+    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
+    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
+    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
+    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
+  ];
 
   states: State[] = [
     {
@@ -45,7 +53,6 @@ export class HomeComponent implements OnInit {
   options: FormGroup;
 
   constructor(fb: FormBuilder) {
-    
     this.options = fb.group({
       hideRequired: false,
       floatLabel: 'auto',
@@ -57,23 +64,14 @@ export class HomeComponent implements OnInit {
         map(state => state ? this._filterStates(state) : this.states.slice())
       );
   }
-  
   private _filterStates(value: string): State[] {
     const filterValue = value.toLowerCase();
 
     return this.states.filter(state => state.name.toLowerCase().indexOf(filterValue) === 0);
   }
-  
   ngOnInit() {
 
   }
-
-  tiles: Tile[] = [
-    { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
-    { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
-    { text: 'Three', cols: 1, rows: 1, color: 'lightpink' },
-    { text: 'Four', cols: 2, rows: 1, color: '#DDBDF1' },
-  ];
 }
 
 export interface Tile {
