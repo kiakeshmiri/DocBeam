@@ -12,15 +12,17 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HomeComponent } from './home/home.component';
 import { NotesModule } from './notes/notes.module';
 import { MatComponentsModule } from './mat-components/mat-components.module';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MaterialModule } from './material/material.module';
+import { DocNavComponent } from './doc-nav/doc-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
+    DocNavComponent
   ],
   imports: [
     AccountModule,
@@ -31,12 +33,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     MatComponentsModule,
     NotesModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    MaterialModule
   ],
   providers: [
     ConfigService,
