@@ -1,9 +1,0 @@
-<div *ngIf="note">
-  <h2>{{note.Id | uppercase}} details</h2>
-  <div>
-    <label>Body:
-      <input [(ngModel)] = "note.Body" placeholder="Body">
-    </label>
-  </div>
-  <button (click) = "goBack()">go back</button>
-</div>

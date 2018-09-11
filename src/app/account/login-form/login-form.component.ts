@@ -10,7 +10,7 @@ import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.scss']
 })
 
 export class LoginFormComponent implements OnInit, OnDestroy {
@@ -25,7 +25,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
   constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute
     , private meta: Meta) {
-      this.meta.addTag({ name: 'google-signin-client_id', 
+      this.meta.addTag({ name: 'google-signin-client_id',
       content: '718366265318-a4766nun9ogatr8rpr87gb7tedt554ah.apps.googleusercontent.com' });
     }
 
@@ -66,5 +66,4 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         );
     }
   }
-
 }

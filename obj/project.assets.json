@@ -12724,23 +12724,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kkeshmiri\\.nuget\\packages\\": {},
+    "C:\\Users\\kiake\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MyProjects\\DocBeam\\DocBeam.csproj",
+      "projectUniqueName": "e:\\Projects\\DocBeam\\DocBeam.csproj",
       "projectName": "DocBeam",
-      "projectPath": "C:\\MyProjects\\DocBeam\\DocBeam.csproj",
-      "packagesPath": "C:\\Users\\kkeshmiri\\.nuget\\packages\\",
-      "outputPath": "C:\\MyProjects\\DocBeam\\obj\\",
+      "projectPath": "e:\\Projects\\DocBeam\\DocBeam.csproj",
+      "packagesPath": "C:\\Users\\kiake\\.nuget\\packages\\",
+      "outputPath": "e:\\Projects\\DocBeam\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\kkeshmiri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kiake\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12748,7 +12748,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {

@@ -2,19 +2,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BaseService } from './base.service';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { ConfigService } from '../utils/config.service';
 import { catchError, tap } from 'rxjs/operators';
 
 import { AppUser } from '../models/AppUser';
 import { Customer } from '../models/Customer';
 import { Credentials } from '../models/credentials.interface';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService extends BaseService {
 
-  baseUrl: string = '';
+  baseUrl = '';
 
   // Observable navItem source
   private _authNavStatusSource = new BehaviorSubject<boolean>(false);
@@ -35,9 +35,9 @@ export class UserService extends BaseService {
   register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<String> {
     // let identity: AppUser  = new AppUser();
     // identity.password = password
-     //JSON.stringify({password});
-    let body = JSON.stringify({ email, firstName, lastName, location });
-    let customer: Customer = new Customer();
+    // JSON.stringify({password});
+    // let body = JSON.stringify({ email, firstName, lastName, location });
+    const customer: Customer = new Customer();
     customer.identity = new AppUser();
     customer.identity.password = password;
     customer.identity.userName = email;
@@ -47,17 +47,17 @@ export class UserService extends BaseService {
     customer.location = location;
 
     console.log(customer);
-    var headers = new HttpHeaders({ 
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
     const options = { headers };
-    return this.http.post<String>(this.baseUrl + "/accounts", customer, options)
+    return this.http.post<String>(this.baseUrl + '/accounts', customer, options)
       .pipe(catchError(this.handleError));
   }
 
   login(credentials: Credentials) {
 
-    var headers = new HttpHeaders({ 
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
 
@@ -86,9 +86,9 @@ export class UserService extends BaseService {
   }
 
   facebookLogin(accessToken: string) {
-    let headers = new HttpHeaders();
+    const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    let body = JSON.stringify({ accessToken });
+    const body = JSON.stringify({ accessToken });
     return this.http
       .post(
         this.baseUrl + '/externalauth/facebook', body, { headers })

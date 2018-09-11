@@ -1,23 +1,34 @@
-<div layout="column" layout-align="center center">
-  <form #f="ngForm" novalidate (ngSubmit)="login(f)">
-    <div>
-      <mat-form-field class="example-full-width">
-        <input matInput required name="email" class="form-control" placeholder="Email" [ngModel]="credentials.email" #email="ngModel"
-          email>
-        <mat-error *ngIf="!email.valid">Please enter a valid email</mat-error>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput type="password" class="form-control" id="password" required name="password" placeholder="Password" ngModel>
-      </mat-form-field>
-      <div *ngIf="errors" class="alert alert-danger" role="alert">
-        <strong>Oops!</strong> {{errors}}
-      </div>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="50%">
+        <mat-card>
+            <form #f="ngForm" novalidate (ngSubmit)="login(f)">
+              <div>
+                <mat-form-field class="example-full-width">
+                  <input matInput required name="email" class="form-control" placeholder="Email" [ngModel]="credentials.email"
+                    #email="ngModel" email>
+                  <mat-error *ngIf="!email.valid">Please enter a valid email</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input matInput type="password" class="form-control" id="password" required name="password" placeholder="Password"
+                    ngModel>
+                </mat-form-field>
+                <div *ngIf="errors" class="alert alert-danger" role="alert">
+                  <strong>Oops!</strong> {{errors}}
+                </div>
+              </div>
+              <button mat-raised-button color="primary" [disabled]="f.invalid || isRequesting" class="login-button" type="submit">Login</button>
+            </form>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <div *ngIf="isRequesting">
+              <mat-progress-spinner class="example-margin" color="primary" mode="indeterminate">
+              </mat-progress-spinner>
+            </div>
+        </mat-card>
     </div>
-    <button mat-raised-button color="primary" [disabled]="f.invalid || isRequesting" class="login-button" type="submit">Login</button>
-  </form>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <div *ngIf="isRequesting">
-    <mat-progress-spinner class="example-margin" color="primary" mode="indeterminate">
-    </mat-progress-spinner>
-  </div>
 </div>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="50%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg">
+    </div>
+    
+  </div>

@@ -1,20 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'doc-beam';
-
-  constructor(private http: HttpClient) { }
-  apiValues: string[] = [];
-
-  ngOnInit() {
-    // this.http.get<string[]>('/api/values').subscribe(values => {
-    //   this.apiValues = values;
-    // });
-  }
+export class AppComponent {
+  title = 'DocBeam';
 }

@@ -3,17 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "doc-beam": {
+    "DocBeam": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
-      "architect": {
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "targets": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "wwwroot",
+            "outputPath": "dist/DocBeam",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -50,18 +54,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "doc-beam:build"
+            "browserTarget": "DocBeam:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "doc-beam:build:production"
+              "browserTarget": "DocBeam:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "doc-beam:build"
+            "browserTarget": "DocBeam:build"
           }
         },
         "test": {
@@ -72,8 +76,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css",
-              "src/doc-beam-app.scss"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -96,19 +99,19 @@
         }
       }
     },
-    "doc-beam-e2e": {
+    "DocBeam-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "architect": {
+      "targets": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "doc-beam:serve"
+            "devServerTarget": "DocBeam:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "doc-beam:serve:production"
+              "devServerTarget": "DocBeam:serve:production"
             }
           }
         },
@@ -124,10 +127,5 @@
       }
     }
   },
-  "schematics": {
-    "@schematics/angular:component": {
-      "styleext": "scss"
-    }
-  },
-  "defaultProject": "doc-beam"
+  "defaultProject": "DocBeam"
 }
