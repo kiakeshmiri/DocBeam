@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatDividerModule, MatFormFieldModule, MatAutocompleteModule,
   MatInputModule, MatSlideToggleModule, MatRadioModule, MatSelectModule, MatIconModule, MatCardModule, MatProgressSpinnerModule
-  , MatProgressBarModule,
-  MatToolbarModule,
-  MatMenuModule} from '@angular/material';
+  , MatProgressBarModule, MatToolbarModule, MatMenuModule, MatSidenavModule, MatListModule, MatDatepickerModule
+  , MatNativeDateModule} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -26,7 +25,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   exports: [
     MatButtonModule,
@@ -45,7 +48,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: []
 })

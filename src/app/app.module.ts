@@ -14,13 +14,12 @@ import { FormsModule } from '@angular/forms';
 import { AccountModule } from './account/account.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DashboardComponent
   ],
   imports: [
     AccountModule,
@@ -37,6 +36,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    DashboardModule
   ],
   providers: [
     ConfigService,
