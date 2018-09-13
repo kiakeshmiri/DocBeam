@@ -6,5 +6,5 @@ import { LoginFormComponent } from './login-form/login-form.component';
 
 export const routing: ModuleWithProviders = RouterModule.forChild([
   { path: 'account/register', component: RegistrationFormComponent},
-  { path: 'login', component: LoginFormComponent},
+  { path: 'account/login', component: LoginFormComponent},
 ]);

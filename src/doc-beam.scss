@@ -14,7 +14,14 @@ $db-app-accent:  mat-palette($mat-blue, A200, A100, A400);
 // The warn palette is optional (defaults to red).
 $db-app-warn:    mat-palette($mat-red);
 
-//$db-app-theme: mat-light-theme($db-app-primary, $db-app-accent, $db-app-warn);
-$db-app-theme: mat-dark-theme($db-app-primary, $db-app-accent, $db-app-warn);
+$db-app-theme: mat-light-theme($db-app-primary, $db-app-accent, $db-app-warn);
+//$db-app-theme: mat-dark-theme($db-app-primary, $db-app-accent, $db-app-warn);
 
 @include angular-material-theme($db-app-theme);
+
+$db-input-primary: mat-palette($mat-light-blue, 300, 400);
+$db-input-accent: mat-palette($mat-light-blue, 100, 200);
+$db-input-theme : mat-light-theme($db-input-primary, $db-input-accent, $db-app-warn);
+
+@include mat-form-field-theme($db-input-theme); // Form-Field theme
+@include mat-input-theme($db-input-theme);      // Input Theme

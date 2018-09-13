@@ -1,38 +1,28 @@
-.mat-card {    
-    text-align: -webkit-center;    
-}    
-    
-.demo-toolbar {    
-    display: flex;    
-    align-items: center;    
-    width: 100%;    
-}    
-    
-.demo-form {    
-    min-width: 150px;    
-    max-width: 500px;    
-    width: 100%;    
-}    
-    
-.demo-full-width {    
+
+.input-full-width {    
     width: 100%;    
 }    
     
 body {    
     margin: 0;    
-    font-family: Roboto, sans-serif;    
+    //font-family: Roboto, sans-serif;    
 }    
     
 mat-card {    
-    max-width: 80%;    
-    margin: 2em auto;    
+    max-width: 100%;    
+    margin: 10px auto;    
     text-align: center;    
 }    
-    
+
+
 mat-toolbar-row {    
     justify-content: space-between;    
 }    
     
+mat-radio-button:nth-child(2){
+    margin-left: 10px;
+}
+
 .done {    
     position: fixed;    
     bottom: 20px;    
