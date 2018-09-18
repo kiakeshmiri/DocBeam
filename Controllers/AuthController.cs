@@ -32,7 +32,7 @@ namespace DocBeam.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Post([FromBody]CredentialsViewModel credentials)
         {
-            await Task.Delay(10000);
+            await Task.Delay(5000);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

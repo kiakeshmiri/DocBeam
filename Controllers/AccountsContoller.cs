@@ -22,20 +22,12 @@ namespace DocBeam.Controllers
             this.userService = service;
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]RegistrationViewModel model)
+        public async Task<IActionResult> Post([FromBody]Customer customer)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            Customer customer = new Customer();
-            customer.FirstName = model.FirstName;
-            customer.LastName = model.LastName;
-            customer.Location = model.Location;
-            customer.Identity = new AppUser();
-            customer.Identity.Password = model.Password;
-            customer.Identity.Email = model.Email;
-
             var result = await userService.Create(customer);
 
             if (result == UserCreateResultCode.Success)

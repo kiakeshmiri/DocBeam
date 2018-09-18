@@ -1,8 +1,8 @@
-import { AppUser } from "./AppUser";
+import { AppUser } from './AppUser';
 
 export class Customer {
-    email: string;  
-    identity : AppUser;
+    email: string;
+    identity: AppUser;
     firstName: string;
     lastName:  string;
     location: string;

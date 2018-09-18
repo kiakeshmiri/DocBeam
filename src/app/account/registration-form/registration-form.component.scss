@@ -1,19 +1,21 @@
 
+@import '~@angular/material/theming';
+
 .input-full-width {    
     width: 100%;    
 }    
     
 body {    
     margin: 0;    
-    //font-family: Roboto, sans-serif;    
-}    
-    
-mat-card {    
-    max-width: 100%;    
-    margin: 10px auto;    
-    text-align: center;    
+    font-family: Roboto, sans-serif;    
 }    
 
+mat-card {    
+    max-width: 600px;
+    min-width: 380px;    
+    margin: 10px auto;    
+}    
+ 
 
 mat-toolbar-row {    
     justify-content: space-between;    
@@ -23,13 +25,11 @@ mat-radio-button:nth-child(2){
     margin-left: 10px;
 }
 
-.done {    
-    position: fixed;    
-    bottom: 20px;    
-    right: 20px;    
-    color: white;    
-}    
-    
+mat-raised-button {
+    width: 100%;
+    @include mat-elevation(5);
+}
+
 .content-center {    
     text-align: -webkit-center;    
 }    

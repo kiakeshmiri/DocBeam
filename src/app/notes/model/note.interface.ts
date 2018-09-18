@@ -1,4 +1,4 @@
-export class Note {
+export interface Note {
     Id: string;
     Body: string;
 }

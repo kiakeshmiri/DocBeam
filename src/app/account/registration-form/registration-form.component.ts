@@ -15,34 +15,33 @@ export class RegistrationFormComponent implements OnInit {
   errors: string;
   isRequesting: boolean;
   submitted = false;
-  appUser: AppUser;
+  customer: Customer;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-    this.appUser = new AppUser();
+    this.customer = new Customer();
+    this.customer.identity = new AppUser();
     this.isRequesting = false;
   }
 
-  registerUser({ value, valid }: { value: Customer, valid: boolean }) {
+  registerUser() {
     this.submitted = true;
     this.isRequesting = true;
     this.errors = '';
-    if (valid) {
-      this.userService.register(value.email, this.appUser.password, value.firstName, value.lastName, value.location)
-        .pipe(
-          finalize(() => this.isRequesting = false),
-        )
-        .subscribe(
-          result => {
-            console.log(result);
-            if (result) {
-              this.router.navigate(['/login'], { queryParams: { brandNew: true, email: value.email } });
-            }
-          },
-          error => this.errors = error
-        );
-    }
+    this.userService.register(this.customer)
+      .pipe(
+        finalize(() => this.isRequesting = false),
+      )
+      .subscribe(
+        result => {
+          console.log(result);
+          if (result) {
+            this.router.navigate(['/account/login'], { queryParams: { brandNew: true, email: this.customer.identity.userName } });
+          }
+        },
+        error => this.errors = error
+      );
   }
 
 }

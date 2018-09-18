@@ -1,6 +1,6 @@
 export class AppUser {
     userName: string;
-    facebookId: number;  
+    facebookId: number;
     pictureId: string;
     password: string;
 }

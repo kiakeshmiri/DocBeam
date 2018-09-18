@@ -32,20 +32,7 @@ export class UserService extends BaseService {
     this.baseUrl = configService.getApiURI();
   }
 
-  register(email: string, password: string, firstName: string, lastName: string, location: string): Observable<String> {
-    // let identity: AppUser  = new AppUser();
-    // identity.password = password
-    // JSON.stringify({password});
-    // let body = JSON.stringify({ email, firstName, lastName, location });
-    const customer: Customer = new Customer();
-    customer.identity = new AppUser();
-    customer.identity.password = password;
-    customer.identity.userName = email;
-    customer.email = email;
-    customer.firstName = firstName;
-    customer.lastName = lastName;
-    customer.location = location;
-
+  register(customer: Customer): Observable<String> {
     console.log(customer);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

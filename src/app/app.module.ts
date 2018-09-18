@@ -13,8 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { AccountModule } from './account/account.module';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { NotesModule } from './notes/notes.module';
 
 @NgModule({
   declarations: [
@@ -31,12 +31,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     AppRoutingModule,
     MatComponentsModule,
     LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    DashboardModule
+    DashboardModule,
+    NotesModule
   ],
   providers: [
     ConfigService,
